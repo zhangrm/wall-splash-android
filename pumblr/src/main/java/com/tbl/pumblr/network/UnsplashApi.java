@@ -1,11 +1,11 @@
-package com.tbl.unsplash.network;
+package com.tbl.pumblr.network;
 
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tbl.unsplash.CustomApplication;
-import com.tbl.unsplash.models.Image;
-import com.tbl.unsplash.models.ImageList;
+import com.tbl.pumblr.CustomApplication;
+import com.tbl.pumblr.models.Image;
+import com.tbl.pumblr.models.ImageList;
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
 

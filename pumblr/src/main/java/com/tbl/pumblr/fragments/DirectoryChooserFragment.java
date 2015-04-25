@@ -1,4 +1,4 @@
-package com.tbl.unsplash.fragments;
+package com.tbl.pumblr.fragments;
 /**
  * https://github.com/passy/Android-DirectoryChooser
  *
@@ -154,14 +154,14 @@ public class DirectoryChooserFragment extends DialogFragment {
                              Bundle savedInstanceState) {
 
         assert getActivity() != null;
-        final View view = inflater.inflate(com.tbl.unsplash.R.layout.fragment_directory_chooser, container, false);
+        final View view = inflater.inflate(com.tbl.pumblr.R.layout.fragment_directory_chooser, container, false);
 
-        mBtnConfirm = (Button) view.findViewById(com.tbl.unsplash.R.id.btnConfirm);
-        mBtnCancel = (Button) view.findViewById(com.tbl.unsplash.R.id.btnCancel);
-        mBtnNavUp = (ImageButton) view.findViewById(com.tbl.unsplash.R.id.btnNavUp);
-        mBtnCreateFolder = (ImageButton) view.findViewById(com.tbl.unsplash.R.id.btnCreateFolder);
-        mTxtvSelectedFolder = (TextView) view.findViewById(com.tbl.unsplash.R.id.txtvSelectedFolder);
-        mListDirectories = (ListView) view.findViewById(com.tbl.unsplash.R.id.directoryList);
+        mBtnConfirm = (Button) view.findViewById(com.tbl.pumblr.R.id.btnConfirm);
+        mBtnCancel = (Button) view.findViewById(com.tbl.pumblr.R.id.btnCancel);
+        mBtnNavUp = (ImageButton) view.findViewById(com.tbl.pumblr.R.id.btnNavUp);
+        mBtnCreateFolder = (ImageButton) view.findViewById(com.tbl.pumblr.R.id.btnCreateFolder);
+        mTxtvSelectedFolder = (TextView) view.findViewById(com.tbl.pumblr.R.id.txtvSelectedFolder);
+        mListDirectories = (ListView) view.findViewById(com.tbl.pumblr.R.id.directoryList);
 
         mBtnConfirm.setOnClickListener(new OnClickListener() {
 
@@ -336,11 +336,11 @@ public class DirectoryChooserFragment extends DialogFragment {
      */
     private void openNewFolderDialog() {
         new AlertDialog.Builder(getActivity())
-                .setTitle(com.tbl.unsplash.R.string.create_folder_label)
+                .setTitle(com.tbl.pumblr.R.string.create_folder_label)
                 .setMessage(
-                        String.format(getString(com.tbl.unsplash.R.string.create_folder_msg),
+                        String.format(getString(com.tbl.pumblr.R.string.create_folder_msg),
                                 mNewDirectoryName))
-                .setNegativeButton(com.tbl.unsplash.R.string.cancel_label,
+                .setNegativeButton(com.tbl.pumblr.R.string.cancel_label,
                         new DialogInterface.OnClickListener() {
 
                             @Override
@@ -349,7 +349,7 @@ public class DirectoryChooserFragment extends DialogFragment {
                                 dialog.dismiss();
                             }
                         })
-                .setPositiveButton(com.tbl.unsplash.R.string.confirm_label,
+                .setPositiveButton(com.tbl.pumblr.R.string.confirm_label,
                         new DialogInterface.OnClickListener() {
 
                             @Override
@@ -495,17 +495,17 @@ public class DirectoryChooserFragment extends DialogFragment {
                 boolean result = newDir.mkdir();
                 if (result) {
                     changeDirectory(newDir);
-                    return com.tbl.unsplash.R.string.create_folder_success;
+                    return com.tbl.pumblr.R.string.create_folder_success;
                 } else {
-                    return com.tbl.unsplash.R.string.create_folder_error;
+                    return com.tbl.pumblr.R.string.create_folder_error;
                 }
             } else {
-                return com.tbl.unsplash.R.string.create_folder_error_already_exists;
+                return com.tbl.pumblr.R.string.create_folder_error_already_exists;
             }
         } else if (mSelectedDir != null && !mSelectedDir.canWrite()) {
-            return com.tbl.unsplash.R.string.create_folder_error_no_write_access;
+            return com.tbl.pumblr.R.string.create_folder_error_no_write_access;
         } else {
-            return com.tbl.unsplash.R.string.create_folder_error;
+            return com.tbl.pumblr.R.string.create_folder_error;
         }
     }
 

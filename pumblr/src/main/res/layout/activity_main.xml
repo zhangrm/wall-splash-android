@@ -20,7 +20,7 @@
             android:elevation="4dp"/>
     </RelativeLayout>
 
-    <fragment android:name="com.tbl.unsplash.fragments.ImagesFragment"
+    <fragment android:name="com.tbl.pumblr.fragments.ImagesFragment"
               android:id="@+id/ly_last_images_fragment"
               android:layout_gravity="center"
               android:layout_height="match_parent"

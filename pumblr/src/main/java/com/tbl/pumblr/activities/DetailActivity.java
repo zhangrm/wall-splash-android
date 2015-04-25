@@ -1,4 +1,4 @@
-package com.tbl.unsplash.activities;
+package com.tbl.pumblr.activities;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
@@ -40,14 +40,14 @@ import com.koushikdutta.ion.Response;
 import com.koushikdutta.ion.future.ResponseFuture;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.FontAwesome;
-import com.tbl.unsplash.R;
-import com.tbl.unsplash.fragments.DirectoryChooserFragment;
-import com.tbl.unsplash.fragments.ImagesFragment;
-import com.tbl.unsplash.models.Image;
-import com.tbl.unsplash.other.CustomAnimatorListener;
-import com.tbl.unsplash.other.CustomTransitionListener;
-import com.tbl.unsplash.other.PaletteTransformation;
-import com.tbl.unsplash.other.Utils;
+import com.tbl.pumblr.R;
+import com.tbl.pumblr.fragments.DirectoryChooserFragment;
+import com.tbl.pumblr.fragments.ImagesFragment;
+import com.tbl.pumblr.models.Image;
+import com.tbl.pumblr.other.CustomAnimatorListener;
+import com.tbl.pumblr.other.CustomTransitionListener;
+import com.tbl.pumblr.other.PaletteTransformation;
+import com.tbl.pumblr.other.Utils;
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.listeners.ActionClickListener;
 

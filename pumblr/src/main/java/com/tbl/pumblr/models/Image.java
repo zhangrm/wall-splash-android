@@ -1,8 +1,8 @@
-package com.tbl.unsplash.models;
+package com.tbl.pumblr.models;
 
 import android.support.v7.graphics.Palette;
 
-import com.tbl.unsplash.other.Utils;
+import com.tbl.pumblr.other.Utils;
 
 import java.io.Serializable;
 import java.text.DateFormat;

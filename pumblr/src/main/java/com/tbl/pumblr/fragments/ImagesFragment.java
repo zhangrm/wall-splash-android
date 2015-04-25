@@ -1,4 +1,4 @@
-package com.tbl.unsplash.fragments;
+package com.tbl.pumblr.fragments;
 
 
 import android.app.Fragment;
@@ -19,13 +19,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import com.tbl.unsplash.OnItemClickListener;
-import com.tbl.unsplash.activities.DetailActivity;
-import com.tbl.unsplash.activities.MainActivity;
-import com.tbl.unsplash.models.Image;
-import com.tbl.unsplash.models.ImageList;
-import com.tbl.unsplash.network.UnsplashApi;
-import com.tbl.unsplash.views.adapters.ImageAdapter;
+import com.tbl.pumblr.OnItemClickListener;
+import com.tbl.pumblr.activities.DetailActivity;
+import com.tbl.pumblr.activities.MainActivity;
+import com.tbl.pumblr.models.Image;
+import com.tbl.pumblr.models.ImageList;
+import com.tbl.pumblr.network.UnsplashApi;
+import com.tbl.pumblr.views.adapters.ImageAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -79,10 +79,10 @@ public class ImagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(com.tbl.unsplash.R.layout.fragment_images, container, false);
-        mImageRecycler = (RecyclerView) rootView.findViewById(com.tbl.unsplash.R.id.fragment_last_images_recycler);
-        mImagesProgress = (ProgressBar) rootView.findViewById(com.tbl.unsplash.R.id.fragment_images_progress);
-        mImagesErrorView = (ErrorView) rootView.findViewById(com.tbl.unsplash.R.id.fragment_images_error_view);
+        View rootView = inflater.inflate(com.tbl.pumblr.R.layout.fragment_images, container, false);
+        mImageRecycler = (RecyclerView) rootView.findViewById(com.tbl.pumblr.R.id.fragment_last_images_recycler);
+        mImagesProgress = (ProgressBar) rootView.findViewById(com.tbl.pumblr.R.id.fragment_images_progress);
+        mImagesErrorView = (ErrorView) rootView.findViewById(com.tbl.pumblr.R.id.fragment_images_error_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         mImageRecycler.setLayoutManager(gridLayoutManager);
@@ -154,14 +154,14 @@ public class ImagesFragment extends Fragment {
             if (error instanceof RetrofitError) {
                 RetrofitError e = (RetrofitError) error;
                 if (e.getKind() == RetrofitError.Kind.NETWORK) {
-                    mImagesErrorView.setErrorTitle(com.tbl.unsplash.R.string.error_network);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.unsplash.R.string.error_network_subtitle);
+                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_network);
+                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_network_subtitle);
                 } else if (e.getKind() == RetrofitError.Kind.HTTP) {
-                    mImagesErrorView.setErrorTitle(com.tbl.unsplash.R.string.error_server);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.unsplash.R.string.error_server_subtitle);
+                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_server);
+                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_server_subtitle);
                 } else {
-                    mImagesErrorView.setErrorTitle(com.tbl.unsplash.R.string.error_uncommon);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.unsplash.R.string.error_uncommon_subtitle);
+                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_uncommon);
+                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_uncommon_subtitle);
                 }
             }
 
@@ -194,9 +194,9 @@ public class ImagesFragment extends Fragment {
                 detailIntent.putExtra("swatch_rgb", selectedImage.getSwatch().getRgb());
             }
 
-            ImageView coverImage = (ImageView) v.findViewById(com.tbl.unsplash.R.id.item_image_img);
+            ImageView coverImage = (ImageView) v.findViewById(com.tbl.pumblr.R.id.item_image_img);
             if (coverImage == null) {
-                coverImage = (ImageView) ((View) v.getParent()).findViewById(com.tbl.unsplash.R.id.item_image_img);
+                coverImage = (ImageView) ((View) v.getParent()).findViewById(com.tbl.pumblr.R.id.item_image_img);
             }
 
             if (Build.VERSION.SDK_INT >= 21) {
@@ -223,7 +223,7 @@ public class ImagesFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == com.tbl.unsplash.R.id.action_shuffle) {
+        if (id == com.tbl.pumblr.R.id.action_shuffle) {
             if (mImages != null) {
                 //we don't want to shuffle the original list
                 ArrayList<Image> shuffled = new ArrayList<Image>(mImages);

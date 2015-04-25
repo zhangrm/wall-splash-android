@@ -1,4 +1,4 @@
-package com.tbl.unsplash.other;
+package com.tbl.pumblr.other;
 
 import android.graphics.Bitmap;
 import android.support.v7.graphics.Palette;

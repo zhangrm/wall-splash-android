@@ -1,10 +1,10 @@
-package com.tbl.unsplash.views.views;
+package com.tbl.pumblr.views.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-import com.tbl.unsplash.ScrollViewListener;
+import com.tbl.pumblr.ScrollViewListener;
 
 public class ObservableScrollView extends ScrollView {
 

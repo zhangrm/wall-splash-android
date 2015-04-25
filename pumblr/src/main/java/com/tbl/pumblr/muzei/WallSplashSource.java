@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tbl.unsplash.muzei;
+package com.tbl.pumblr.muzei;
 
 import android.app.WallpaperManager;
 import android.content.Intent;
@@ -23,8 +23,8 @@ import android.util.Log;
 
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
-import com.tbl.unsplash.models.Image;
-import com.tbl.unsplash.network.UnsplashApi;
+import com.tbl.pumblr.models.Image;
+import com.tbl.pumblr.network.UnsplashApi;
 
 import retrofit.ErrorHandler;
 import retrofit.RestAdapter;

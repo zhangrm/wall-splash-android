@@ -1,4 +1,4 @@
-package com.tbl.unsplash.activities;
+package com.tbl.pumblr.activities;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
-import com.tbl.unsplash.R;
-import com.tbl.unsplash.models.ImageList;
-import com.tbl.unsplash.network.UnsplashApi;
+import com.tbl.pumblr.R;
+import com.tbl.pumblr.models.ImageList;
+import com.tbl.pumblr.network.UnsplashApi;
 
 
 public class MainActivity extends ActionBarActivity {

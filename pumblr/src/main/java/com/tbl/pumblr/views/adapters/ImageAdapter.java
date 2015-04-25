@@ -1,4 +1,4 @@
-package com.tbl.unsplash.views.adapters;
+package com.tbl.pumblr.views.adapters;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,11 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tbl.unsplash.OnItemClickListener;
-import com.tbl.unsplash.R;
-import com.tbl.unsplash.models.Image;
-import com.tbl.unsplash.other.PaletteTransformation;
-import com.tbl.unsplash.other.Utils;
+import com.tbl.pumblr.OnItemClickListener;
+import com.tbl.pumblr.R;
+import com.tbl.pumblr.models.Image;
+import com.tbl.pumblr.other.PaletteTransformation;
+import com.tbl.pumblr.other.Utils;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 

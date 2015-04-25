@@ -1,4 +1,4 @@
-package com.tbl.unsplash.models;
+package com.tbl.pumblr.models;
 
 import java.util.ArrayList;
 
