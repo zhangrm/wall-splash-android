@@ -21,7 +21,9 @@ import retrofit.http.GET;
 import rx.Observable;
 
 public class UnsplashApi {
-    public static final String ENDPOINT = "http://wallsplash.lanora.io";
+    //public static final String ENDPOINT = "http://wallsplash.lanora.io";
+    public static final String ENDPOINT = "http://115.28.57.215:8080/api/v1/photo/";
+
     private final UnsplashService mWebService;
 
     public static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create(); //2015-01-18 15:48:56
@@ -97,7 +99,11 @@ public class UnsplashApi {
     public ArrayList<Image> filterCategory(ArrayList<Image> images, int filter) {
         ArrayList<Image> list = new ArrayList<Image>(images);
         for (Iterator<Image> it = list.iterator(); it.hasNext(); ) {
-            if ((it.next().getCategory() & filter) != filter) {
+            /*if ((it.next().getCategory() & filter) != filter) {
+                it.remove();
+            }*/
+
+            if (it.next().getCategory() != filter) {
                 it.remove();
             }
         }
@@ -107,7 +113,11 @@ public class UnsplashApi {
     public static int countCategory(ArrayList<Image> images, int filter) {
         int count = 0;
         for (Image image : images) {
-            if ((image.getCategory() & filter) == filter) {
+            /*if ((image.getCategory() & filter) == filter) {
+                count = count + 1;
+            }*/
+
+            if (image.getCategory() == filter) {
                 count = count + 1;
             }
         }

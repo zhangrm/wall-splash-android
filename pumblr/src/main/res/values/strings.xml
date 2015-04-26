@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">wall:splash</string>
+    <string name="app_name">Pumblr</string>
     <string name="action_open_source">Open Source</string>
     <string name="action_shuffle">Shuffle</string>
 

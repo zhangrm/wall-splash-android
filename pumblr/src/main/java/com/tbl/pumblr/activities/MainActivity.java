@@ -31,11 +31,11 @@ public class MainActivity extends ActionBarActivity {
         TECHNOLOGY(16),
         OBJECTS(32),
 
-        Car(50000),
-        Luxury(60000),
-        Beauty(70000),
-        HandsomeBoy(80000),
-        Comic(90000)
+        Car(1),
+        Luxury(2),
+        Beauty(3),
+        HandsomeBoy(4),
+        Comic(5)
 
         ;
 
@@ -79,10 +79,10 @@ public class MainActivity extends ActionBarActivity {
                         new PrimaryDrawerItem().withName(R.string.category_technology).withIdentifier(Category.TECHNOLOGY.id).withIcon(GoogleMaterial.Icon.gmd_local_see)*/
 
                         new PrimaryDrawerItem().withName(R.string.category_car).withIdentifier(Category.Car.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_luxury).withIdentifier(Category.Luxury.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_beauty).withIdentifier(Category.Beauty.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_handsome_boy).withIdentifier(Category.HandsomeBoy.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_comic).withIdentifier(Category.Comic.id).withIcon(GoogleMaterial.Icon.gmd_landscape)
+                        new PrimaryDrawerItem().withName(R.string.category_luxury).withIdentifier(Category.Luxury.id).withIcon(GoogleMaterial.Icon.gmd_grade),
+                        new PrimaryDrawerItem().withName(R.string.category_beauty).withIdentifier(Category.Beauty.id).withIcon(GoogleMaterial.Icon.gmd_location_city),
+                        new PrimaryDrawerItem().withName(R.string.category_handsome_boy).withIdentifier(Category.HandsomeBoy.id).withIcon(GoogleMaterial.Icon.gmd_local_florist),
+                        new PrimaryDrawerItem().withName(R.string.category_comic).withIdentifier(Category.Comic.id).withIcon(GoogleMaterial.Icon.gmd_person)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
      * @param images
      */
     public void setCategoryCount(ImageList images) {
-        if (result.getDrawerItems() != null && result.getDrawerItems().size() == 9 && images != null && images.getData() != null) {
+        if (result.getDrawerItems() != null && /*result.getDrawerItems().size() == 9 &&*/ images != null && images.getData() != null) {
             /*result.updateBadge(images.getData().size() + "", 0);
             result.updateBadge(UnsplashApi.countFeatured(images.getData()) + "", 1);
 
@@ -118,11 +118,11 @@ public class MainActivity extends ActionBarActivity {
             result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.PEOPLE.id) + "", 7);
             result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.TECHNOLOGY.id) + "", 8);*/
 
-            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Car.id) + "", 3);
-            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Luxury.id) + "", 4);
-            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Beauty.id) + "", 5);
-            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.HandsomeBoy.id) + "", 6);
-            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Comic.id) + "", 7);
+            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Car.id) + "", 0);
+            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Luxury.id) + "", 1);
+            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Beauty.id) + "", 2);
+            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.HandsomeBoy.id) + "", 3);
+            result.updateBadge(UnsplashApi.countCategory(images.getData(), Category.Comic.id) + "", 4);
         }
     }
 
