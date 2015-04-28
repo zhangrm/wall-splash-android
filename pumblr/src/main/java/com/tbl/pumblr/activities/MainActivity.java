@@ -1,18 +1,26 @@
 package com.tbl.pumblr.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
+import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileSettingDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 import com.tbl.pumblr.R;
 import com.tbl.pumblr.models.ImageList;
@@ -47,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public Drawer.Result result;
+    public AccountHeader.Result headerResult;
 
     private OnFilterChangedListener onFilterChangedListener;
 
@@ -63,44 +72,70 @@ public class MainActivity extends ActionBarActivity {
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
-        result = new Drawer()
-                .withActivity(this)
-                .withToolbar(toolbar)
-                .withHeader(R.layout.header)
-                .addDrawerItems(
-                        /*new PrimaryDrawerItem().withName(R.string.category_all).withIdentifier(Category.ALL.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_featured).withIdentifier(Category.FEATURED.id).withIcon(GoogleMaterial.Icon.gmd_grade),
-                        new SectionDrawerItem().withName(R.string.category_section_categories),
-                        new PrimaryDrawerItem().withName(R.string.category_buildings).withIdentifier(Category.BUILDINGS.id).withIcon(GoogleMaterial.Icon.gmd_location_city),
-                        new PrimaryDrawerItem().withName(R.string.category_food).withIdentifier(Category.FOOD.id).withIcon(GoogleMaterial.Icon.gmd_local_bar),
-                        new PrimaryDrawerItem().withName(R.string.category_nature).withIdentifier(Category.NATURE.id).withIcon(GoogleMaterial.Icon.gmd_local_florist),
-                        new PrimaryDrawerItem().withName(R.string.category_objects).withIdentifier(Category.OBJECTS.id).withIcon(GoogleMaterial.Icon.gmd_style),
-                        new PrimaryDrawerItem().withName(R.string.category_people).withIdentifier(Category.PEOPLE.id).withIcon(GoogleMaterial.Icon.gmd_person),
-                        new PrimaryDrawerItem().withName(R.string.category_technology).withIdentifier(Category.TECHNOLOGY.id).withIcon(GoogleMaterial.Icon.gmd_local_see)*/
+        // Create the AccountHeader
+        headerResult = new AccountHeader()
+            .withActivity(this)
+            .withHeaderBackground(R.drawable.header)
+            .addProfiles(
+                new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile)),
+                new ProfileSettingDrawerItem().withName("Manage Account").withIcon(GoogleMaterial.Icon.gmd_settings)
+            )
+            .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                @Override
+                public void onProfileChanged(View view, IProfile iProfile) {
 
-                        new PrimaryDrawerItem().withName(R.string.category_car).withIdentifier(Category.Car.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
-                        new PrimaryDrawerItem().withName(R.string.category_luxury).withIdentifier(Category.Luxury.id).withIcon(GoogleMaterial.Icon.gmd_grade),
-                        new PrimaryDrawerItem().withName(R.string.category_beauty).withIdentifier(Category.Beauty.id).withIcon(GoogleMaterial.Icon.gmd_location_city),
-                        new PrimaryDrawerItem().withName(R.string.category_handsome_boy).withIdentifier(Category.HandsomeBoy.id).withIcon(GoogleMaterial.Icon.gmd_local_florist),
-                        new PrimaryDrawerItem().withName(R.string.category_comic).withIdentifier(Category.Comic.id).withIcon(GoogleMaterial.Icon.gmd_person)
-                )
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem drawerItem) {
-                        if (drawerItem != null) {
-                            if (drawerItem instanceof Nameable) {
-                                toolbar.setTitle(((Nameable) drawerItem).getNameRes());
-                            }
-                            if (onFilterChangedListener != null) {
-                                onFilterChangedListener.onFilterChanged(drawerItem.getIdentifier());
-                            }
+                }
+            })
+            .build();
+
+        result = new Drawer()
+            .withActivity(this)
+            .withToolbar(toolbar)
+            .withHeader(R.layout.header)
+            .withAccountHeader(headerResult)
+            .withFooter(R.layout.footer)
+            .addDrawerItems(
+                    /*new PrimaryDrawerItem().withName(R.string.category_all).withIdentifier(Category.ALL.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
+                    new PrimaryDrawerItem().withName(R.string.category_featured).withIdentifier(Category.FEATURED.id).withIcon(GoogleMaterial.Icon.gmd_grade),
+                    new SectionDrawerItem().withName(R.string.category_section_categories),
+                    new PrimaryDrawerItem().withName(R.string.category_buildings).withIdentifier(Category.BUILDINGS.id).withIcon(GoogleMaterial.Icon.gmd_location_city),
+                    new PrimaryDrawerItem().withName(R.string.category_food).withIdentifier(Category.FOOD.id).withIcon(GoogleMaterial.Icon.gmd_local_bar),
+                    new PrimaryDrawerItem().withName(R.string.category_nature).withIdentifier(Category.NATURE.id).withIcon(GoogleMaterial.Icon.gmd_local_florist),
+                    new PrimaryDrawerItem().withName(R.string.category_objects).withIdentifier(Category.OBJECTS.id).withIcon(GoogleMaterial.Icon.gmd_style),
+                    new PrimaryDrawerItem().withName(R.string.category_people).withIdentifier(Category.PEOPLE.id).withIcon(GoogleMaterial.Icon.gmd_person),
+                    new PrimaryDrawerItem().withName(R.string.category_technology).withIdentifier(Category.TECHNOLOGY.id).withIcon(GoogleMaterial.Icon.gmd_local_see)*/
+
+                    new PrimaryDrawerItem().withName(R.string.category_car).withIdentifier(Category.Car.id).withIcon(GoogleMaterial.Icon.gmd_landscape),
+                    new PrimaryDrawerItem().withName(R.string.category_luxury).withIdentifier(Category.Luxury.id).withIcon(GoogleMaterial.Icon.gmd_grade),
+                    new PrimaryDrawerItem().withName(R.string.category_beauty).withIdentifier(Category.Beauty.id).withIcon(GoogleMaterial.Icon.gmd_location_city),
+                    new PrimaryDrawerItem().withName(R.string.category_handsome_boy).withIdentifier(Category.HandsomeBoy.id).withIcon(GoogleMaterial.Icon.gmd_local_florist),
+                    new PrimaryDrawerItem().withName(R.string.category_comic).withIdentifier(Category.Comic.id).withIcon(GoogleMaterial.Icon.gmd_person)
+            )
+            .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem drawerItem) {
+                    if (drawerItem != null) {
+                        if (drawerItem instanceof Nameable) {
+                            toolbar.setTitle(((Nameable) drawerItem).getNameRes());
+                        }
+                        if (onFilterChangedListener != null) {
+                            onFilterChangedListener.onFilterChanged(drawerItem.getIdentifier());
                         }
                     }
-                })
-                .build();
+                }
+            })
+            .build();
 
         //disable scrollbar :D it's ugly
         result.getListView().setVerticalScrollBarEnabled(false);
+
+        //Show the back arrow
+        /*result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+
+        //Show the hamburger icon
+        /*getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);*/
     }
 
     /**
@@ -126,16 +161,16 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        menu.findItem(R.id.action_open_source).setIcon(new IconicsDrawable(this, FontAwesome.Icon.faw_github).color(Color.WHITE).actionBarSize());
+        menu.findItem(R.id.action_open_source).setIcon(new IconicsDrawable(this, FontAwesome.Icon.faw_desktop).color(Color.WHITE).actionBarSize());
         menu.findItem(R.id.action_shuffle).setIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_shuffle).paddingDp(1).color(Color.WHITE).actionBarSize());
 
         return true;
-    }*/
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -147,6 +182,8 @@ public class MainActivity extends ActionBarActivity {
                     .withActivityTheme(R.style.MaterialDrawerTheme_ActionBar)
                     .withLibraries("rxJava", "rxAndroid")
                     .start(this);
+            /*startActivity(new Intent(MainActivity.this,AboutActivity.class));*/
+
 
             return true;
         }

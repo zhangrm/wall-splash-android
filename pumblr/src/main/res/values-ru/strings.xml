@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Pumblr</string>
-    <string name="action_open_source">Open Source</string>
+    <string name="action_open_source">About</string>
     <string name="action_shuffle">Перемешать</string>
 
     <!-- categories -->
@@ -51,7 +51,7 @@
     <string name="aboutLibraries_description_showIcon">true</string>
     <string name="aboutLibraries_description_showVersion">true</string>
     <string name="aboutLibraries_description_text">
-        <![CDATA[
+        <!--<![CDATA[
         <b>wall:splash</b> by <a href="mikepenz.com">Mike Penz</a> – это неофициальный клиент для <a href="https://unsplash.com">unsplash</a>, сервиса с бесплатными фотографиями в высоком разрешении от <a href="https://pickcrew.com/">Crew</a>
         <br/>
         <br/>
@@ -60,7 +60,7 @@
         <br/>
         <br/>
         Приложение и API создал <a href="mikepenz.com">Mike Penz</a>
-        ]]>
+        ]]>-->
     </string>
 
     <!-- DialogFragment -->

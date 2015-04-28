@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.tbl.pumblr.OnItemClickListener;
+import com.tbl.pumblr.R;
 import com.tbl.pumblr.activities.DetailActivity;
 import com.tbl.pumblr.activities.MainActivity;
 import com.tbl.pumblr.models.Image;
@@ -194,9 +195,9 @@ public class ImagesFragment extends Fragment {
                 detailIntent.putExtra("swatch_rgb", selectedImage.getSwatch().getRgb());
             }
 
-            ImageView coverImage = (ImageView) v.findViewById(com.tbl.pumblr.R.id.item_image_img);
+            ImageView coverImage = (ImageView) v.findViewById(R.id.item_image_img);
             if (coverImage == null) {
-                coverImage = (ImageView) ((View) v.getParent()).findViewById(com.tbl.pumblr.R.id.item_image_img);
+                coverImage = (ImageView) ((View) v.getParent()).findViewById(R.id.item_image_img);
             }
 
             if (Build.VERSION.SDK_INT >= 21) {

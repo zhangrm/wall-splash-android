@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Pumblr</string>
-    <string name="action_open_source">Open Source</string>
+    <string name="action_open_source">About</string>
     <string name="action_shuffle">Shuffle</string>
 
     <!-- categories -->
@@ -36,7 +36,7 @@
     <string name="help_try_long_click_ok">OK</string>
 
     <!-- Muzei support -->
-    <string name="muzei_description">awesome unsplash images</string>
+    <string name="muzei_description">awesome pumblr images</string>
 
     <!-- network exceptions -->
     <string name="error_network">No connection</string>
@@ -52,7 +52,7 @@
     <string name="aboutLibraries_description_showIcon">true</string>
     <string name="aboutLibraries_description_showVersion">true</string>
     <string name="aboutLibraries_description_text">
-        <![CDATA[
+        <!--<![CDATA[
         <b>wall:splash</b> by <a href="mikepenz.com">Mike Penz</a>
         is a (unofficial) client for the awesome
         <a href="https://unsplash.com">unsplash</a>
@@ -67,7 +67,7 @@
         <br/>
         <br/>
         Application and API created by <a href="mikepenz.com">Mike Penz</a>
-        ]]>
+        ]]>-->
     </string>
 
     <!-- DialogFragment -->
@@ -81,4 +81,8 @@
     <string name="create_folder_error_already_exists">Folder already exists</string>
     <string name="create_folder_error">Could not create folder</string>
     <string name="up_label">Up</string>
+    <string name="title_activity_about">About</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>
