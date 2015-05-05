@@ -166,8 +166,8 @@ public class MainActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        menu.findItem(R.id.action_open_source).setIcon(new IconicsDrawable(this, FontAwesome.Icon.faw_desktop).color(Color.WHITE).actionBarSize());
-        menu.findItem(R.id.action_shuffle).setIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_shuffle).paddingDp(1).color(Color.WHITE).actionBarSize());
+        //menu.findItem(R.id.action_open_source).setIcon(new IconicsDrawable(this, FontAwesome.Icon.faw_desktop).color(Color.WHITE).actionBarSize());
+        //menu.findItem(R.id.action_shuffle).setIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_shuffle).paddingDp(1).color(Color.WHITE).actionBarSize());
 
         return true;
     }
@@ -175,18 +175,17 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_open_source) {
+        /*if (id == R.id.action_open_source) {
             new Libs.Builder()
                     .withFields(R.string.class.getFields())
                     .withActivityTitle(getString(R.string.action_open_source))
                     .withActivityTheme(R.style.MaterialDrawerTheme_ActionBar)
                     .withLibraries("rxJava", "rxAndroid")
                     .start(this);
-            /*startActivity(new Intent(MainActivity.this,AboutActivity.class));*/
 
 
             return true;
-        }
+        }*/
         return false; //super.onOptionsItemSelected(item);
     }
 

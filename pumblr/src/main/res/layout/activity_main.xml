@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:id="@+id/activity_main_toolbar_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,9 +18,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
-    <fragment android:name="com.tbl.pumblr.fragments.ImagesFragment"
+    <fragment android:name="com.tbl.pumblr.fragments.PhotosFragment"
               android:id="@+id/ly_last_images_fragment"
               android:layout_gravity="center"
               android:layout_height="match_parent"

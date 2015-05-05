@@ -1,11 +1,39 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
       xmlns:app="http://schemas.android.com/apk/res-auto"
-      tools:context=".MainActivity">
+      tools:context=".activities.NavigationDrawerActivity">
     <item android:id="@+id/action_shuffle"
           android:title="@string/action_shuffle"
           app:showAsAction="ifRoom"/>
-    <item android:id="@+id/action_open_source"
-          android:title="@string/action_open_source"
-          app:showAsAction="ifRoom"/>
+    <!--<item android:id="@+id/action_open_source"
+          android:title="@string/action_screen"
+          app:showAsAction="ifRoom"/>-->
+
+    <item
+        android:id="@+id/action_open_source"
+        android:actionProviderClass="com.tbl.pumblr.other.PlusActionProvider"
+        android:icon="@drawable/toolbar_screen_selector"
+        app:showAsAction="ifRoom"
+        android:title="@string/action_screen"/>
+
+    <!--<item
+        android:id="@+id/action_album"
+        android:icon="@drawable/toolbar_press"
+        android:title="sdfsdfsdf"/>
+    <item
+        android:id="@+id/action_collection"
+        android:icon="@drawable/toolbar_press"
+        android:title="sdfdsfdsf"/>
+    <item
+        android:id="@+id/action_card"
+        android:icon="@drawable/toolbar_press"
+        android:title="sdfsaffas"/>
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/toolbar_press"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/action_feed"
+        android:icon="@drawable/toolbar_press"
+        android:title="dsfsfsddfs"/>-->
 </menu>

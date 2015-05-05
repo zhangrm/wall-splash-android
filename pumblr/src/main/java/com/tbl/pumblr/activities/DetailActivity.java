@@ -42,7 +42,8 @@ import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.tbl.pumblr.R;
 import com.tbl.pumblr.fragments.DirectoryChooserFragment;
-import com.tbl.pumblr.fragments.ImagesFragment;
+/*import com.tbl.pumblr.fragments.ImagesFragment;*/
+import com.tbl.pumblr.fragments.PhotosFragment;
 import com.tbl.pumblr.models.Image;
 import com.tbl.pumblr.other.CustomAnimatorListener;
 import com.tbl.pumblr.other.CustomTransitionListener;
@@ -163,7 +164,8 @@ public class DetailActivity extends ActionBarActivity {
 
         //get the imageHeader and set the coverImage
         final ImageView image = (ImageView) findViewById(R.id.activity_detail_image);
-        Bitmap imageCoverBitmap = ImagesFragment.photoCache.get(position);
+        Bitmap imageCoverBitmap = PhotosFragment.photoCache.get(position);
+
         //safety check to prevent nullPointer in the palette if the detailActivity was in the background for too long
         if (imageCoverBitmap == null || imageCoverBitmap.isRecycled()) {
             this.finish();

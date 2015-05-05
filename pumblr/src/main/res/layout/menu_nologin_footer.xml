@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:minHeight="95dp">
+    <LinearLayout
+        android:id="@+id/menu_sign_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/menuLoginWelcomeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Sign in"
+            android:textSize="19sp"
+            android:textColor="#7dbb2d"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to pumblr"
+            android:textSize="12dp"
+            android:textColor="#717272"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="0.5dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/menu_login_split"
+        />
+    <LinearLayout
+        android:id="@+id/menu_register_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/menuLoginInfoTv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Register"
+            android:textSize="19sp"
+            android:textColor="#bb702b"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simple a few steps"
+            android:textSize="12dp"
+            android:textColor="#717272"/>
+    </LinearLayout>
+</LinearLayout>

@@ -22,11 +22,12 @@ import android.widget.ProgressBar;
 import com.tbl.pumblr.OnItemClickListener;
 import com.tbl.pumblr.R;
 import com.tbl.pumblr.activities.DetailActivity;
-import com.tbl.pumblr.activities.MainActivity;
+import com.tbl.pumblr.activities.NavigationDrawerActivity;
 import com.tbl.pumblr.models.Image;
 import com.tbl.pumblr.models.ImageList;
 import com.tbl.pumblr.network.UnsplashApi;
 import com.tbl.pumblr.views.adapters.ImageAdapter;
+import com.tbl.pumblr.views.drawer.MaterialNavigationDrawer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +39,7 @@ import rx.schedulers.Schedulers;
 import tr.xip.errorview.ErrorView;
 import tr.xip.errorview.RetryListener;
 
-public class ImagesFragment extends Fragment {
+public class PhotosFragment extends Fragment {
 
     public static SparseArray<Bitmap> photoCache = new SparseArray<>(1);
 
@@ -55,11 +56,11 @@ public class ImagesFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         setHasOptionsMenu(true);
 
-        if (ImagesFragment.this.getActivity() instanceof MainActivity) {
-            ((MainActivity) ImagesFragment.this.getActivity()).setOnFilterChangedListener(new MainActivity.OnFilterChangedListener() {
+        if (PhotosFragment.this.getActivity() instanceof MaterialNavigationDrawer) {
+            ((NavigationDrawerActivity) PhotosFragment.this.getActivity()).setOnFilterChangedListener(new NavigationDrawerActivity.OnFilterChangedListener() {
                 @Override
                 public void onFilterChanged(int filter) {
-                    if (mImages != null) {
+                    /*if (mImages != null) {
                         if (filter == MainActivity.Category.ALL.id) {
                             showAll();
                         } else if (filter == MainActivity.Category.FEATURED.id) {
@@ -69,7 +70,7 @@ public class ImagesFragment extends Fragment {
                         } else {
                             showCategory(filter);
                         }
-                    }
+                    }*/
                 }
             });
         }
@@ -80,10 +81,10 @@ public class ImagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(com.tbl.pumblr.R.layout.fragment_images, container, false);
-        mImageRecycler = (RecyclerView) rootView.findViewById(com.tbl.pumblr.R.id.fragment_last_images_recycler);
-        mImagesProgress = (ProgressBar) rootView.findViewById(com.tbl.pumblr.R.id.fragment_images_progress);
-        mImagesErrorView = (ErrorView) rootView.findViewById(com.tbl.pumblr.R.id.fragment_images_error_view);
+        View rootView = inflater.inflate(R.layout.fragment_images, container, false);
+        mImageRecycler = (RecyclerView) rootView.findViewById(R.id.fragment_last_images_recycler);
+        mImagesProgress = (ProgressBar) rootView.findViewById(R.id.fragment_images_progress);
+        mImagesErrorView = (ErrorView) rootView.findViewById(R.id.fragment_images_error_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
         mImageRecycler.setLayoutManager(gridLayoutManager);
@@ -137,9 +138,9 @@ public class ImagesFragment extends Fragment {
             mImages = images.getData();
             updateAdapter(mImages);
 
-            if (ImagesFragment.this.getActivity() instanceof MainActivity) {
-                ((MainActivity) ImagesFragment.this.getActivity()).setCategoryCount(images);
-            }
+            /*if (PhotosFragment.this.getActivity() instanceof NavigationDrawerActivity) {
+                ((NavigationDrawerActivity) PhotosFragment.this.getActivity()).setCategoryCount(images);
+            }*/
         }
 
         @Override
@@ -155,14 +156,14 @@ public class ImagesFragment extends Fragment {
             if (error instanceof RetrofitError) {
                 RetrofitError e = (RetrofitError) error;
                 if (e.getKind() == RetrofitError.Kind.NETWORK) {
-                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_network);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_network_subtitle);
+                    mImagesErrorView.setErrorTitle(R.string.error_network);
+                    mImagesErrorView.setErrorSubtitle(R.string.error_network_subtitle);
                 } else if (e.getKind() == RetrofitError.Kind.HTTP) {
-                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_server);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_server_subtitle);
+                    mImagesErrorView.setErrorTitle(R.string.error_server);
+                    mImagesErrorView.setErrorSubtitle(R.string.error_server_subtitle);
                 } else {
-                    mImagesErrorView.setErrorTitle(com.tbl.pumblr.R.string.error_uncommon);
-                    mImagesErrorView.setErrorSubtitle(com.tbl.pumblr.R.string.error_uncommon_subtitle);
+                    mImagesErrorView.setErrorTitle(R.string.error_uncommon);
+                    mImagesErrorView.setErrorSubtitle(R.string.error_uncommon_subtitle);
                 }
             }
 
@@ -224,7 +225,7 @@ public class ImagesFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        /*if (id == com.tbl.pumblr.R.id.action_shuffle) {
+        /*if (id == R.id.action_shuffle) {
             if (mImages != null) {
                 //we don't want to shuffle the original list
                 ArrayList<Image> shuffled = new ArrayList<Image>(mImages);

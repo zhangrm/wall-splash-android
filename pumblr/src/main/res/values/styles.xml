@@ -1,4 +1,23 @@
 <resources>
+    <declare-styleable name="zrmStyle">
+        <attr format="boolean" name="isCustomFoot"/>
+        <attr format="boolean" name="isCustomListView"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
     <style name="AppTheme" parent="MaterialDrawerTheme.TranslucentStatus">
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
     </style>
@@ -11,5 +30,45 @@
     <style name="WindowAnimationTransition">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+
+
+    <style name="LoginWelcomeTextStyle">
+        <item name="android:text">Welcome to pumblr</item>
+        <item name="android:textColor">#638e2e</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="LoginInfoTextStyle">
+        <item name="android:text">Conventient to user,please login</item>
+        <item name="android:textColor">#8e6a2e</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="MenuItemIconStyle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginBottom">21dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="MenuItemTextStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#878787</item>
+    </style>
+
+    <!--https://github.com/neokree/MaterialNavigationDrawer/wiki/Theming-->
+    <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
+        <!--<item name="drawerType">@integer/DRAWERTYPE_NO_HEADER</item>-->
+        <item name="isCustomFoot">true</item>
+        <item name="isCustomListView">true</item>
+        <item name="drawerType">@integer/DRAWERTYPE_CUSTOM</item>
+        <item name="colorPrimary">#303030</item>
+        <item name="colorPrimaryDark">#303030</item>
+        <item name="colorAccent">#FFFFFF</item>
     </style>
 </resources>

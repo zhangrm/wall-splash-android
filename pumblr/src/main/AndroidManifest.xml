@@ -26,11 +26,7 @@
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.DetailActivity"
@@ -64,6 +60,17 @@
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/title_activity_about" >
+        </activity>
+        <activity
+            android:name=".activities.IndexActivity">
+        </activity>
+        <activity
+            android:name=".activities.NavigationDrawerActivity"
+            android:theme="@style/MyNavigationDrawerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

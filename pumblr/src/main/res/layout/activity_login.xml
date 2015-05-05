@@ -1,0 +1,95 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical"
+    android:gravity="bottom">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.mikepenz.materialdrawer.view.CircularImageView
+            android:id="@+id/avatorImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="13dp"
+            android:src="@drawable/login_username"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:phoneNumber="true"
+            android:windowSoftInputMode="stateAlwaysVisible"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:textSize="13sp"
+            android:hint="Phone"
+            android:textColorHint="#9b909e"
+            android:textColor="#595959"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#2a262d"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.mikepenz.materialdrawer.view.CircularImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="13dp"
+            android:src="@drawable/login_password"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="Password"
+            android:textColorHint="#9b909e"
+            android:textSize="13sp"
+            android:textColor="#595959"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#2a262d"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingRight="16dp"
+        android:text="Forgot password?"
+        android:textColor="#7dbb2d"
+        android:textSize="13sp"
+        android:gravity="center_vertical|right"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="20dp"
+
+        android:text="Login"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:background="#7dbb2d"/>
+
+</LinearLayout>
